@@ -16,7 +16,7 @@ class Song
 
     if @@song_count_by_genre[genre] == nil || @@song_count_by_genre[genre] > @@count
       @@song_count_by_genre[genre] = 1
-      puts "Ever run????"
+
     else
       @@song_count_by_genre[genre] += 1
     end
