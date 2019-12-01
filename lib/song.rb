@@ -16,6 +16,7 @@ class Song
 
     if @@song_count_by_genre[genre] == nil || @@song_count_by_genre[genre] > @@count
       @@song_count_by_genre[genre] = 0
+      puts "Ever run????"
     end
     @@song_count_by_genre[genre] += 1
 
@@ -23,7 +24,7 @@ class Song
       @@song_count_by_artist[artist] = 0
     end
     #@@song_count_by_artist[artist] += 1
-    puts "The songs by genre #{@@song_count_by_genre[genre]} and this many counts: #{@@count}"
+    #puts "The songs by genre #{@@song_count_by_genre[genre]} and this many counts: #{@@count}"
   end
 
   def self.count
