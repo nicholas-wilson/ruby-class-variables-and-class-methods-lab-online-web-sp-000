@@ -16,7 +16,7 @@ class Song
 
     if (@@song_count_by_genre[genre] == nil || @@song_count_by_genre[genre] > @@count)# && @@song_count_by_genre.size != 1
       @@song_count_by_genre[genre] = 1
-      puts "#{song_count_by_genre.size}"
+      puts "#{song_count_by_genre.keys}"
     else
       @@song_count_by_genre[genre] += 1
     end
