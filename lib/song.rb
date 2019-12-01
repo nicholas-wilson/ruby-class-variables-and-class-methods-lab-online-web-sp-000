@@ -15,10 +15,11 @@ class Song
     @@genres << genre
 
     if @@song_count_by_genre[genre] == nil || @@song_count_by_genre[genre] > @@count
-      @@song_count_by_genre[genre] = 0
+      @@song_count_by_genre[genre] = 1
       puts "Ever run????"
+    else
+      @@song_count_by_genre[genre] += 1
     end
-    @@song_count_by_genre[genre] += 1
 
     if @@song_count_by_artist[artist] == nil
       @@song_count_by_artist[artist] = 0
