@@ -2,8 +2,7 @@ class Song
   @@count = 0
   @@artists = []
   @@genres = []
-  @@song_count_by_genre = {}
-  @@song_count_by_artist = {}
+
   attr_accessor :name, :artist, :genre
 
   def initialize(name, artist, genre)
@@ -14,18 +13,6 @@ class Song
     @@artists << artist
     @@genres << genre
 
-    if (@@song_count_by_genre[genre] == nil || @@song_count_by_genre[genre] > @@count)# && @@song_count_by_genre.size != 1
-      @@song_count_by_genre[genre] = 1
-      puts "#{song_count_by_genre.keys}"
-    else
-      @@song_count_by_genre[genre] += 1
-    end
-
-    if @@song_count_by_artist[artist] == nil
-      @@song_count_by_artist[artist] = 0
-    end
-    #@@song_count_by_artist[artist] += 1
-    #puts "The songs by genre #{@@song_count_by_genre[genre]} and this many counts: #{@@count}"
   end
 
   def self.count
@@ -53,7 +40,13 @@ class Song
   end
 
   def self.genre_count
-    @@song_count_by_genre
+    song_count_by_genre = {}
+    @@genres.each do |genre|
+      if song_count_by_genre[genre] == nil
+        song_count_by_genre[genre] = 0
+      end
+      song_count_by_genre[genre] += 1
+    end
   end
 
   def self.artist_count
